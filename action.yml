@@ -1,0 +1,19 @@
+name: 'Secrets to environment variables'
+description: 'Clones the specified repository secrets into environment variables'
+author: 'Chad Oftedahl'
+branding:
+  icon: 'archive'  
+  color: 'blue'
+inputs:
+  secrets:
+    description: "json string of github repository secrets"
+    required: true
+  secret_filter_regex:
+    description: "regex to choose which secrets to export to env vars"
+    required: false
+  env_var_name_lower_case_regex:
+    description: "regex to select secret name text to make lower case"
+    required: false
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
